@@ -86,10 +86,7 @@ router.put("/:sekolahId", async (req, res) => {
 
 router.delete("/:sekolahId", async (req, res) => {
   try {
-    const sekolah = await DataSekolah.deleteOne(
-      { _id: req.params.sekolahId },
-      data
-    );
+    const sekolah = await DataSekolah.deleteOne({ _id: req.params.sekolahId });
     res.json(sekolah);
   } catch (error) {
     res.json({
